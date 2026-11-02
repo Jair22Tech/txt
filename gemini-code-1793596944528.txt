@@ -1,5 +1,5 @@
 $usuario = "k82UY7AvEVMPkx7cKbey5Zmr"
-$senha = "SUA_SENHA_AQUI"
+$senha = "keSqpwCc6KL3ykh7AzVHQ86R"
 $servidor = "amsterdam.nl.socks.nordhold.net:1080"
 
 "socks5://${usuario}:${senha}@${servidor}" | Out-File -FilePath "$([Environment]::GetFolderPath('Desktop'))\proxies.txt" -Encoding utf8
