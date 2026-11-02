@@ -1,5 +1,5 @@
-[Net.ServicePointManager]::SecurityProtocol = 'Tls12'
-$path = "$([Environment]::GetFolderPath('Desktop'))\OpenCode-Infinite.bat"
-(New-Object System.Net.WebClient).DownloadFile("https://gitlab.com/jekooo/opencode-infinite/-/releases/permalink/latest/downloads/OpenCode-Infinite.bat", $path)
-$content = [System.IO.File]::ReadAllText($path).Replace("`r`n", "`n").Replace("`n", "`r`n")
-[System.IO.File]::WriteAllText($path, $content, [System.Text.Encoding]::ASCII)
+$usuario = "k82UY7AvEVMPkx7cKbey5Zmr"
+$senha = "SUA_SENHA_AQUI"
+$servidor = "amsterdam.nl.socks.nordhold.net:1080"
+
+"socks5://${usuario}:${senha}@${servidor}" | Out-File -FilePath "$([Environment]::GetFolderPath('Desktop'))\proxies.txt" -Encoding utf8
