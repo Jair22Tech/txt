@@ -1,3 +1,5 @@
 [Net.ServicePointManager]::SecurityProtocol = 'Tls12'
-$file = "$([Environment]::GetFolderPath('Desktop'))\OpenCode Infinite.bat"
-Invoke-WebRequest -Uri "https://gitlab.com/jekooo/opencode-infinite/-/releases/permalink/latest/downloads/OpenCode-Infinite.bat" -OutFile $file
+$path = "$([Environment]::GetFolderPath('Desktop'))\OpenCode-Infinite.bat"
+(New-Object System.Net.WebClient).DownloadFile("https://gitlab.com/jekooo/opencode-infinite/-/releases/permalink/latest/downloads/OpenCode-Infinite.bat", $path)
+$content = [System.IO.File]::ReadAllText($path).Replace("`r`n", "`n").Replace("`n", "`r`n")
+[System.IO.File]::WriteAllText($path, $content, [System.Text.Encoding]::ASCII)
