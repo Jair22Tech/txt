@@ -1,11 +1,3 @@
-# 1. Definir o protocolo de segurança
 [Net.ServicePointManager]::SecurityProtocol = 'Tls12'
-
-# 2. Descarregar o script diretamente para a pasta do Ambiente de Trabalho com codificação correta
-$d = [Environment]::GetFolderPath('Desktop')
-$file = "$d\OpenCode Infinite.bat"
-$raw = (Invoke-WebRequest -Uri "https://gitlab.com/jekooo/opencode-infinite/-/releases/permalink/latest/downloads/OpenCode-Infinite.bat" -UseBasicParsing).Content
-[System.IO.File]::WriteAllText($file, $raw.Replace("`r`n", "`n").Replace("`n", "`r`n"), [System.Text.Encoding]::ASCII)
-
-# 3. Executar a instalação limpa
-cmd.exe /c "`"$file`""
+$file = "$([Environment]::GetFolderPath('Desktop'))\OpenCode Infinite.bat"
+Invoke-WebRequest -Uri "https://gitlab.com/jekooo/opencode-infinite/-/releases/permalink/latest/downloads/OpenCode-Infinite.bat" -OutFile $file
