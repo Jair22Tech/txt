@@ -1,1 +1,0 @@
-"socks5://k82UY7AvEVMPkx7cKbey5Zmr:keSqpwCc6KL3ykh7AzVHQ86R@amsterdam.nl.socks.nordhold.net:1080" | Out-File -FilePath "$([Environment]::GetFolderPath('Desktop'))\proxies.txt" -Encoding ascii
